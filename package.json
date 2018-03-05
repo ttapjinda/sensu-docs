@@ -8,6 +8,7 @@
   "devDependencies": {
     "conzole": "^0.2.0",
     "grunt": "^1.0.1",
+    "hugo-cli": "^0.5.4",
     "husky": "^0.14.3",
     "js-yaml": "^3.9.1",
     "string": "^3.3.3",
@@ -17,6 +18,7 @@
   "scripts": {
     "postinstall": "grunt",
     "precommit": "grunt",
+    "server": "grunt hugo-server",
     "test": "bin/test"
   }
 }

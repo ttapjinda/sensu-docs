@@ -1,0 +1,5 @@
+/sensu-core/latest  /sensu-core/1.2 200
+/sensu-enterprise/latest /sensu-enterprise/2.8  200
+/sensu-enterprise-dashboard/latest /sensu-enterprise-dashboard/2.11 200
+/plugins/latest /plugins/2.3    200
+/extensions/latest  /extensions/1.0 200

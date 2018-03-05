@@ -1,7 +1,9 @@
 [build]
   publish = "public/"
   command = "yarn"
-  environment = { HUGO_VERSION = "0.35" }
+
+[build.environment]
+  HUGO_VERSION = "0.35"
 
 [[redirects]]
   from = "/sensu-core/latest/*"

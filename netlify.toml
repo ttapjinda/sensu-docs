@@ -3,7 +3,7 @@
   command = "yarn"
 
 [build.environment]
-  HUGO_VERSION = "0.35"
+  HUGO_VERSION = "0.36.0"
 
 [[redirects]]
   from = "/sensu-core/latest/*"

@@ -1,0 +1,19 @@
+[[redirects]]
+from = /sensu-core/latest/*
+to = /sensu-core/1.2/:splat
+
+[[redirects]]
+from = /sensu-enterprise/latest/*
+to = /sensu-enterprise/2.8/:splat
+
+[[redirects]]
+from = /sensu-enterprise-dashboard/latest/*
+to = /sensu-enterprise-dashboard/2.11/:splat
+
+[[redirects]]
+from = /plugins/latest/*
+to = /plugins/2.3/:splat
+
+[[redirects]]
+from = /extensions/latest/*
+to = /extensions/1.0/:splat

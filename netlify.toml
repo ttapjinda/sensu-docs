@@ -1,6 +1,6 @@
 [context.production]
   publish = "public/"
-  command = "yarn"
+  command = "hugo"
   environment = { HUGO_VERSION = "0.35" }
 
 [[redirects]]

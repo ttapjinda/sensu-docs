@@ -68,6 +68,25 @@ required     | false
 type         | integer 
 example      | {{< highlight shell >}}"timeout": 30{{</highlight>}}
 
+organization | 
+-------------|------ 
+description  | the Sensu RBAC organization that this check belongs to
+required     | false 
+type         | String 
+default      | current organization value configured for `sensuctl` (ie `default`) 
+example      | {{< highlight shell >}}
+  "organization": "default",
+{{</ highlight >}}
+
+environment  | 
+-------------|------ 
+description  | the Sensu RBAC environment that this check belongs to
+required     | false 
+type         | String 
+default      | current environment value configured for `sensuctl` (ie `default`) 
+example      | {{< highlight shell >}}
+  "environment": "default",
+{{</ highlight >}}
 
 ## Examples
 

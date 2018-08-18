@@ -69,7 +69,8 @@ repository configurations._
 echo '[sensu]
 name=sensu
 baseurl=https://sensu.global.ssl.fastly.net/yum/$releasever/$basearch/
-gpgcheck=0
+gpgkey=https://repositories.sensuapp.org/yum/pubkey.gpg
+gpgcheck=1
 enabled=1' | sudo tee /etc/yum.repos.d/sensu.repo{{< /highlight >}}
 
 2. Install Sensu:

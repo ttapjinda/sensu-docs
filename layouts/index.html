@@ -33,21 +33,71 @@
 <!-- Main content -->
 <div class="homepage-main">
   <div class="product-block">
-    {{ range sort .Site.Params.Products "weight" }}
-      {{ $.Scratch.Set "url" "" }}
-      {{ $.Scratch.Set "url" (printf "/%s/%s/" .identifier .latest) }}
-      {{ $url := $.Scratch.Get "url" }}
-      <a class="product-holder" id="product-{{ .identifier }}" href="{{ $url }}">
-        <div class="mask"></div>
-        <div class="content">          
-          <div class="homepage-product"><span class="product-title">{{ .name }}</span>
-            <span class="description">
-              {{ .description }}
-            </span>
-          </div>
-        </div>
-      </a>
-    {{ end }}
+    <a class="product-holder" id="product-sensu-core" href="./core/latest/">
+         <div class="mask"></div>
+         <div class="content">
+           <div class="homepage-product"><span class="product-title">Sensu Core Edition</span>
+             <span class="description">
+               The open source monitoring event pipeline, redesigned in Go
+             </span>
+           </div>
+         </div>
+       </a>
+
+       <a class="product-holder" id="product-sensu-enterprise" href="./sensu-core/latest/">
+         <div class="mask"></div>
+         <div class="content">
+           <div class="homepage-product"><span class="product-title">Sensu Classic Core</span>
+             <span class="description">
+               The open source monitoring event pipeline
+             </span>
+           </div>
+         </div>
+       </a>
+
+       <a class="product-holder" id="product-sensu-enterprise-dashboard" href="./plugins/latest/">
+         <div class="mask"></div>
+         <div class="content">
+           <div class="homepage-product"><span class="product-title">Plugins</span>
+             <span class="description">
+               Checks, handlers and other plugins to power your Sensu deployment.
+             </span>
+           </div>
+         </div>
+       </a>
+
+       <a class="product-holder" id="product-uchiwa" href="./enterprise/latest/">
+         <div class="mask"></div>
+         <div class="content">
+               <div class="homepage-product"><span class="product-title">Sensu Enterprise Edition</span>
+                 <span class="description">
+                   The powerful and simple monitoring product, built on Sensu Core.
+             </span>
+           </div>
+         </div>
+       </a>
+
+       <a class="product-holder" id="product-plugins" href="./sensu-enterprise/latest/">
+       <div class="mask"></div>
+       <div class="content">
+         <div class="homepage-product"><span class="product-title">Sensu Classic Enterprise</span>
+           <span class="description">
+             The powerful and simple monitoring product, built on Sensu Classic Core.
+           </span>
+         </div>
+       </div>
+     </a>
+
+       <a class="product-holder" id="product-extensions" href="./uchiwa/latest/">
+         <div class="mask"></div>
+         <div class="content">
+           <div class="homepage-product"><span class="product-title">Uchiwa</span>
+             <span class="description">
+               An open source dashboard for Sensu Classic.
+             </span>
+           </div>
+         </div>
+       </a>
   </div>
 
 <!-- Footer which is not displayed -->

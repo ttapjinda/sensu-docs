@@ -1,14 +1,15 @@
 ---
-title: "Sensuctl"
-linkTitle: "Sensuctl"
-description: "The sensuctl reference guide"
+title: "Sensuctl Overview"
+linkTitle: "Overview"
+description: "Complete reference docs for sensuctl commands"
 weight: 1
 version: "2.0"
 product: "Sensu Core"
-platformContent: false 
+platformContent: false
+alias: /sensu-core/2.0/reference/sensuctl
 menu:
   sensu-core-2.0:
-    parent: reference
+    parent: sensuctl
 ---
 
 - [Commands](#commands)
@@ -223,4 +224,4 @@ used with silenced entries for example. The following formats are supported:
   America/Vancouver`
 
 [1]: ../../reference/rbac
-[2]: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+[2]: https://en.wikipedia.org/wiki/List_of_tz_

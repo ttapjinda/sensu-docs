@@ -19,9 +19,8 @@ used with Sensu.
 
 ## Why use a check?
 
-Checks are commonly used to monitor server resources, services, and application
-health (e.g. is Nginx running?) as well as collect & analyze metrics (e.g. how
-much disk space do I have left?)
+You can use checks to monitor server resources, services, and application
+health as well as collect & analyze metrics.
 
 ## Using checks to monitor a service
 
@@ -29,7 +28,9 @@ The purpose of this guide is to help you monitor server resources, more
 specifically the CPU usage, by configuring a check named `check-cpu` with a
 **subscription** named `linux`, in order to target all **entities** subscribed
 to the `linux` subscription.
-This guide requires a Sensu backend and at least one Sensu agent running on Linux.
+This guide assumes you have a Sensu agent installed on one or more Linux instances.
+
+_NOTE: See the [installation guide] to install and start the Sensu agent._
 
 ### Installing a script
 
@@ -70,6 +71,24 @@ commands or scripts. The Sensu user is not permitted to kill timed out processes
 invoked by the root user, which could result in zombie processes. While Sensu
 discourages the use of `sudo` in check commands, you are free to configure your
 checks as you see fit, but please do so at your own risk._
+
+### Configuring the agent
+Now that you have the `check-cpu` check set up on the `linux` subscriptions
+
+On each instance that needs CPU monitoring, add the `linux` subscription to the
+the agent configuration file (`/etc/sensu/agent.yml`). The subscription configuration
+should now look like this:
+
+{{< highlight yml >}}
+subscriptions: "linux"
+{{< /highlight >}}
+
+
+Sensu agent installation checklist:
+
+- Download the package
+- 
+
 
 ### Validating the check
 

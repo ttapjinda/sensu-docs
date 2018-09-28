@@ -22,14 +22,63 @@ In this guide, we'll cover configuring and using the Sensu Enterprise Dashboard 
 
 Before diving into this guide, we recommend having the following components ready:
 
-- A working Sensu Enterprise deployment
+- A working Sensu Enterprise deployment with Sensu Enterprise Dashboard
 - A GitHub [account][1]
 
 ## GitHub Organization Creation and Configuration
 
+1.) If you don't already have an organization, go to https://github.com/settings/organizations and create an one.
+
+2.) Once created or if using an already made one, go to https://github.com/organizations/<myOrganization>/settings/applications, replacing <myOrganization> with the name or the organization. 
+
+3.) Select "New OAuth App"
+
+4.) Name your application, Homepage URL will be the Sensu Enterprise Dashboard location
+
+http://sensuenterpriseclassic:3000
+
+Authorization callback URL will be
+
+http://sensuenterpriseclassic:3000/login/callback
+
+5.) Once created, make note of the Client ID and Client Secret. They will be used in the Sensu Enterprise Dasbhoard configuration later.
+
+6.) Add teams that you would like access to the Sensu Enterprise Dashboard
+
+https://github.com/<myOrganization>/myTestingg/teams
+
+<add picture of Client ID and Client Secret>
+
 ## Sensu Enterprise Dashboard Configuration
 
+1.) On the server running Sensu Enterprise Dashboard, inside `/etc/sensu/dashboard.json`, add the following object to the `dashboard` hash where the `clientId` and `clientSecret` arrtibutes need to be modified, as well as the `roles` hash
+
+{{< highlight json >}}
+{
+  "dashboard": {
+    "...": "...",
+    "github": {
+      "clientId": "18b4d5db4d30e4af49f8",
+      "clientSecret": "93b1170f171d4ff7d55dee03c293ac540c25a98d",
+      "server": "https://github.com",
+      "roles": [
+        {
+          "name": "myTeam",
+          "members": [
+            "myOrganizaton/myTeam"
+          ]
+        }
+      ]
+    }
+  }
+}
+{{< /highlight >}}
+
 ## Testing the Configuration
+
+Attempt to log into the Sensu Enterprise Dashboard using credentials for a user that is a team member within the Organization created earlier or already made, that has the OAuth `clientId` and `clientSecret` associated with it.
+
+http://sensuenterpriseclassic:3000
 
 ## Wrapping It Up
 
@@ -40,10 +89,5 @@ Before diving into this guide, we recommend having the following components read
 
 <!-- LINKS -->
 [1]: https://github.com/
-[2]: https://slack.sensu.io
-[3]: /images/snow_inventory.png
-[4]: https://github.com/sensu-plugins/sensu-plugins-disk-checks
-[5]: /images/snow_incident.png
-[6]: /images/snow_incident_detail.png
 [7]: ../../rbac/rbac-for-gitlab/
 [8]: https://help.github.com/articles/creating-a-new-organization-from-scratch/
